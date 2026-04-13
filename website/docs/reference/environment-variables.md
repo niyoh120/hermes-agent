@@ -334,9 +334,8 @@ Context compression is configured exclusively through the `compression` section 
 compression:
   enabled: true
   threshold: 0.50
-  summary_model: ""                            # empty = use main configured model
-  summary_provider: auto
-  summary_base_url: null  # Custom OpenAI-compatible endpoint for summaries
+  target_ratio: 0.20         # fraction of threshold to preserve as recent tail
+  protect_last_n: 20         # minimum recent messages to keep uncompressed
 ```
 
 ## Auxiliary Task Overrides
